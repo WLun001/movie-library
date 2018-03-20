@@ -17,6 +17,7 @@
                     You are logged in!
                 </div>
             </div>
+            <a href="/movies">List of movies</a>
         </div>
     </div>
 </div>
