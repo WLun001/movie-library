@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MoviesController extends Controller
 {
@@ -24,7 +25,7 @@ class MoviesController extends Controller
      */
     public function create()
     {
-        //
+        return view('movies.create');
     }
 
     /**
@@ -35,7 +36,22 @@ class MoviesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(Auth::check()){
+            $movie = Movie::create([
+                'title' => $request->input('title'),
+                'url' => $request->input('url'),
+                'ratings' => doubleval($request->input('ratings')),
+                'rating_count' => $request->input('rating-count'),
+                'duration' => intval($request->input('duration')),
+                'year' => $request->input('year'),
+            ]);
+            if($movie){   
+                return redirect()->route('movies.show', ['movie'=> $movie->id])
+                ->with('success' , 'Movie added successfully');
+            }
+        }
+        
+            return back()->withInput()->with('errors', 'Error in adding movie');
     }
 
     /**
@@ -46,7 +62,7 @@ class MoviesController extends Controller
      */
     public function show(Movie $movie)
     {
-        //
+        return view('movies.show', ['movie' => $movie]);
     }
 
     /**
