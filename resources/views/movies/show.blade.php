@@ -5,7 +5,11 @@
     <div class="col-sm-9 col-md-9 col-lg-9 pull-left">
       <div class="jumbotron">
         <h1>{{ $movie->title }}</h1>
-        <p class="lead">{{ $movie->ratings }}</p>
+        <p class="lead">URL: <a href="{{ $movie->url }}">{{ $movie->url }}</a></p>
+        <p class="lead">Ratings: {{ $movie->ratings }}</p>
+        <p class="lead">Ratings Count: {{ $movie->rating_count }}</p>
+        <p class="lead">Duration: {{ $movie->duration }}</p>
+        <p class="lead">Year: {{ $movie->year }}</p>
       </div>
 
       <div class="row" style="background:white; margin: 4px;">
