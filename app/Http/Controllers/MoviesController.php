@@ -73,7 +73,7 @@ class MoviesController extends Controller
      */
     public function edit(Movie $movie)
     {
-        //
+        return view('movies.edit', ['movie' => $movie]);
     }
 
     /**
@@ -85,7 +85,24 @@ class MoviesController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        //
+        if(Auth::check()){
+            $movieUpdate = Movie::find($movie->id)
+                            ->update([
+                                'title' => $request->input('title'),
+                                'url' => $request->input('url'),
+                                'ratings' => doubleval($request->input('ratings')),
+                                'rating_count' => $request->input('rating-count'),
+                                'duration' => intval($request->input('duration')),
+                                'year' => $request->input('year'),
+                                ]);
+
+            if($movieUpdate){   
+                return redirect()->route('movies.show', ['movie'=> $movie->id])
+                ->with('success' , 'Movie added successfully');
+            }
+         }
+    
+        return back()->withInput()->with('errors', 'Error in adding movie');
     }
 
     /**
@@ -96,6 +113,15 @@ class MoviesController extends Controller
      */
     public function destroy(Movie $movie)
     {
-        //
+        if(Auth::check()){
+            $movieDelete = Movie::find($movie->id);
+
+            //redirect  
+            if($movieDelete->delete()){
+                return redirect()->route('movies.index')->with('success', "Movie succesfully deleted");
+            }
+        }
+
+        return back()->withInput()->with('errors', 'Movie could not be deleted');
     }
 }
