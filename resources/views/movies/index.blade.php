@@ -14,7 +14,10 @@
     <div class="panel-body">
       <ul class="list-group">
       @foreach($movies as $movie)
-      <li class="list-group-item"> <a href="/movies/{{ $movie->id }}">{{ $movie->title}}</a> </li>
+      <li class="list-group-item">
+       <a href="/movies/{{ $movie->id }}">{{ $movie->title}}</a> 
+       $movie->genre
+      </li>
       @endforeach
       </ul>
     </div>
