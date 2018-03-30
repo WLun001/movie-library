@@ -18,6 +18,17 @@
                 class="form-control"/>     
        </div>
 
+
+      <div class="form-group">
+        <label for="movie-content">genre</label>
+            <input placeholder="Enter genre"
+                    id="genre"
+                    name="genre"
+                    spellcheck="false"
+                    class="form-control">
+            </input>     
+       </div>
+
        <div class="form-group">
         <label for="movie-content">URL</label>
             <input placeholder="Enter URL"

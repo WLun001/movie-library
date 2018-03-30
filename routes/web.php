@@ -22,3 +22,5 @@ Auth::routes();
 Route::get('/home', 'MoviesController@index')->name('home');
 
 Route::resource('movies', 'MoviesController');
+
+Route::get('/movies/sort/{type}', 'MoviesController@sort')->name('movie.sort');

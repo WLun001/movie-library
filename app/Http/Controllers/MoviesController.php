@@ -39,6 +39,7 @@ class MoviesController extends Controller
         if(Auth::check()){
             $movie = Movie::create([
                 'title' => $request->input('title'),
+                'genre' => $request->input('genre'),
                 'url' => $request->input('url'),
                 'ratings' => doubleval($request->input('ratings')),
                 'rating_count' => $request->input('rating-count'),
@@ -89,6 +90,7 @@ class MoviesController extends Controller
             $movieUpdate = Movie::find($movie->id)
                             ->update([
                                 'title' => $request->input('title'),
+                                'genre' => $request->input('genre'),
                                 'url' => $request->input('url'),
                                 'ratings' => doubleval($request->input('ratings')),
                                 'rating_count' => $request->input('rating-count'),
@@ -123,5 +125,16 @@ class MoviesController extends Controller
         }
 
         return back()->withInput()->with('errors', 'Movie could not be deleted');
+    }
+
+    public function sort($type){
+        switch($type){
+            case 'title': $movies = Movie::orderBy('title', 'asc')->get();
+            break;  
+            case 'genre': $movies = Movie::orderBy('genre', 'asc')->get();
+            break;
+            case 'year' :  $movies = Movie::orderBy('year', 'asc')->get();
+        }
+        return view('movies.index', ['movies' => $movies]);
     }
 }
