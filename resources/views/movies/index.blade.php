@@ -15,8 +15,8 @@
       <ul class="list-group">
       @foreach($movies as $movie)
       <li class="list-group-item">
-       <a href="/movies/{{ $movie->id }}">{{ $movie->title}}</a> 
-       $movie->genre
+       <a href="/movies/{{ $movie->id }}" style="align-text:left">{{ $movie->title }} ({{ $movie->year }})</a> 
+        <div style="align-text:right">{{$movie->genre}}</div>       
       </li>
       @endforeach
       </ul>
