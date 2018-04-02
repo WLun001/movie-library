@@ -5,6 +5,8 @@
     <div class="col-sm-9 col-md-9 col-lg-9 pull-left">
       <div class="jumbotron">
         <h1>{{ $movie->title }}</h1>
+        <p class="lead">Synopsis: {{ $movie->synopsis }}</p>
+        <p class="lead">Genre: {{ $movie->genre }}</p>
         <p class="lead">URL: <a href="{{ $movie->url }}">{{ $movie->url }}</a></p>
         <p class="lead">Ratings: {{ $movie->ratings }}</p>
         <p class="lead">Ratings Count: {{ $movie->rating_count }}</p>

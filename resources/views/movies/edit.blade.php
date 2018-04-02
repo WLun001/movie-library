@@ -24,7 +24,18 @@
        </div>
 
        <div class="form-group">
-        <label for="movie-content">genre</label>
+        <label for="movie-content">Synopsis</label>
+            <input placeholder="Enter Synopsis"
+                    id="synopsis"
+                    name="synopsis"
+                    spellcheck="false"
+                    class="form-control"
+                    value="{{ $movie->synopsis }}">
+            </input>     
+       </div>
+
+       <div class="form-group">
+        <label for="movie-content">Genre</label>
             <input placeholder="Enter genre"
                     id="genre"
                     name="genre"

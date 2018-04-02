@@ -39,6 +39,7 @@ class MoviesController extends Controller
         if(Auth::check()){
             $movie = Movie::create([
                 'title' => $request->input('title'),
+                'synopsis' => $request->input('synopsis'),
                 'genre' => $request->input('genre'),
                 'url' => $request->input('url'),
                 'ratings' => doubleval($request->input('ratings')),
@@ -90,6 +91,7 @@ class MoviesController extends Controller
             $movieUpdate = Movie::find($movie->id)
                             ->update([
                                 'title' => $request->input('title'),
+                                'synopsis' => $request->input('synopsis'),
                                 'genre' => $request->input('genre'),
                                 'url' => $request->input('url'),
                                 'ratings' => doubleval($request->input('ratings')),
