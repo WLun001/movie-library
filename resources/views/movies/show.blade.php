@@ -21,6 +21,7 @@
     </div>
 
       <!-- side bar -->
+      @if(Auth::check())
       <div class="col-sm-3 col-md-3 col-lg-3 pull-right">
          <div class="sidebar-module">
             <h4>Actions</h4>
@@ -44,12 +45,13 @@
               </li>
             </ol>
           </div>
+          @endif
         </div>
 
 
       <!-- Site footer -->
       <footer class="footer">
-        <p>© 2016 Company, Inc.</p>
+        <p>© AAA Movie Library.</p>
       </footer>
 
 @endsection 

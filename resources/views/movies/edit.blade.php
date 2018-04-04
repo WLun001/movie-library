@@ -125,7 +125,7 @@
 
       <!-- Site footer -->
       <footer class="footer">
-        <p>© 2016 Company, Inc.</p>
+        <p>© AAA Movie Library.</p>
       </footer>
 
 @endsection 
