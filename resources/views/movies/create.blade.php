@@ -2,17 +2,35 @@
 
 @section('content')
 
-  <script>
 
-  
+    <script>
 
-  </script>
+      function validation() {
+        var title = document.forms['create-form']['title'].value;
+        var synopsis = document.forms['create-form']['synopsis'].value;
+        var genre = document.forms['create-form']['genre'].value;
+        var imageUrl = document.forms['create-form']['image-url'].value;
+        var url = document.forms['create-form']['url'].value;
+        var ratings = document.forms['create-form']['ratings'].value;
+        var ratingCount = document.forms['create-form']['rating-count'].value;
+        var duration = document.forms['create-form']['duration'].value;
+        var year = document.forms['create-form']['year'].value;
+            
+        if(title == "" || genre == "" || synopsis == "" || imageUrl =="" ||
+          url == "" || ratings == "" || ratingCount == "" || duration == "" || year == "" ) {
+            alert("Please complete all fields");
+            return false;
+        }
+    }
+
+    </script>
 
 
     <div class="col-sm-9 col-md-9 col-lg-9 pull-left">
 
      <div class="row col-sm-12 col-md-12 col-lg-12" style="background:white; margin: 4px;">
-     <form method="post" action="{{ route('movies.store') }}">
+     <form name="create-form" method="post" action="{{ route('movies.store') }}" 
+     onSubmit="return validation()" enctype="multipart/form-data">
        {{ csrf_field() }}
 
        <div class="form-group">
@@ -81,7 +99,7 @@
 
         <div class="col-md-3">
             <label for="year">Year<span class="required">*</span></label>
-            <input type="text" class="form-control" id="year"  name="year" placeholder="Movie year">
+            <input type="text" class="form-control" id="year" name="year" placeholder="Movie year">
         </div>
      
      <div class="form-group">

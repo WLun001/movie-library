@@ -37,15 +37,15 @@ class MoviesController extends Controller
     public function store(Request $request)
     {
         if(Auth::check()){
-            $this->validate($request, [
-                'title' => 'min:2|max:20',
-                'synopsis' => 'min:20|max:100',
-                'image_url' => 'image',
-                'url' => 'url',
-                'rating_count' => 'integer',
-                'duration' => 'integer',
-                'year' => 'integer|min:4',
-            ]);
+            // $this->validate($request, [
+            //     'title' => 'min:2|max:20',
+            //     'synopsis' => 'min:20|max:100',
+            //     'image_url' => 'image',
+            //     'url' => 'url',
+            //     'rating_count' => 'integer',
+            //     'duration' => 'integer',
+            //     'year' => 'integer|min:4',
+            // ]);
 
             $movie = Movie::create([
                 'title' => $request->input('title'),
