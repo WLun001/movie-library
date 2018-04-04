@@ -4,6 +4,7 @@
 
     <div class="col-sm-9 col-md-9 col-lg-9 pull-left">
       <div class="jumbotron">
+        <img src="{{ $movie->image_url }}">
         <h1>{{ $movie->title }}</h1>
         <p class="lead">Synopsis: {{ $movie->synopsis }}</p>
         <p class="lead">Genre: {{ $movie->genre }}</p>

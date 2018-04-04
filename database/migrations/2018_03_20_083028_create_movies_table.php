@@ -18,6 +18,7 @@ class CreateMoviesTable extends Migration
             $table->string('title');
             $table->string('synopsis');
             $table->string('genre');
+            $table->string('image_url');
             $table->string('url');
             $table->double('ratings');
             $table->string('rating_count');

@@ -10,6 +10,7 @@ class Movie extends Model
         'title',
         'synopsis',
         'genre',
+        'image_url',
         'url',
         'ratings',
         'rating_count',

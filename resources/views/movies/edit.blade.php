@@ -45,6 +45,17 @@
             </input>     
        </div>
 
+        <div class="form-group">
+        <label for="movie-content">Image URL</label>
+            <input placeholder="Enter Image URL"
+                    id="image-url"
+                    name="image-url"
+                    spellcheck="false"
+                    class="form-control"
+                    value="{{ $movie->image_url }}">
+            </input>     
+       </div>
+
        <div class="form-group">
         <label for="movie-content">URL</label>
             <input placeholder="Enter URL"
