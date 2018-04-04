@@ -2,6 +2,13 @@
 
 @section('content')
 
+  <script>
+
+  
+
+  </script>
+
+
     <div class="col-sm-9 col-md-9 col-lg-9 pull-left">
 
      <div class="row col-sm-12 col-md-12 col-lg-12" style="background:white; margin: 4px;">
@@ -12,14 +19,13 @@
         <label for="title">Movie Title <span class="required">*</span></label>
         <input placeholder="Enter movie title"
                 id="title"
-                required
                 name="title"
                 spellcheck="false"
                 class="form-control"/>     
        </div>
 
       <div class="form-group">
-        <label for="movie-content">Synopsis</label>
+        <label for="movie-content">Synopsis<span class="required">*</span></label>
             <input placeholder="Enter Synopsis"
                     id="synopsis"
                     name="synopsis"
@@ -29,7 +35,7 @@
        </div>
 
       <div class="form-group">
-        <label for="movie-content">Genre</label>
+        <label for="movie-content">Genre<span class="required">*</span></label>
             <input placeholder="Enter genre"
                     id="genre"
                     name="genre"
@@ -39,7 +45,7 @@
        </div>
 
         <div class="form-group">
-        <label for="movie-content">Image URL</label>
+        <label for="movie-content">Image URL<span class="required">*</span></label>
             <input placeholder="Enter Image URL"
                     id="image-url"
                     name="image-url"
@@ -49,7 +55,7 @@
        </div>
 
        <div class="form-group">
-        <label for="movie-content">URL</label>
+        <label for="movie-content">URL<span class="required">*</span></label>
             <input placeholder="Enter URL"
                     id="url"
                     name="url"
@@ -59,23 +65,23 @@
        </div>
 
        <div class="col-md-3">
-            <label for="ratings">Ratings</label>
+            <label for="ratings">Ratings<span class="required">*</span></label>
             <input type="text" class="form-control" id="ratings" name="ratings" placeholder="Ratings">
         </div>
 
          <div class="col-md-3">
-            <label for="ratings-count">Ratings Count</label>
+            <label for="ratings-count">Ratings Count<span class="required">*</span></label>
             <input type="text" class="form-control" id="rating-count" name="rating-count" placeholder="Ratings Count">
         </div>
 
         <div class="col-md-3">
-            <label for="duration">Duration</label>
+            <label for="duration">Duration<span class="required">*</span></label>
             <input type="text" class="form-control" id="duration" name="duration" placeholder="Duration">
         </div>
 
         <div class="col-md-3">
-            <label for="year">Year</label>
-            <input type="text" class="form-control" id="year" name="year" placeholder="Movie year">
+            <label for="year">Year<span class="required">*</span></label>
+            <input type="text" class="form-control" id="year"  name="year" placeholder="Movie year">
         </div>
      
      <div class="form-group">
