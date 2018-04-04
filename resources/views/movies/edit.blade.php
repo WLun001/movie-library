@@ -24,9 +24,10 @@
        </div>
 
        <div class="form-group">
-        <label for="movie-content">Synopsis</label>
+        <label for="movie-content">Synopsis<span class="required">*</span></label>
             <input placeholder="Enter Synopsis"
                     id="synopsis"
+                    required
                     name="synopsis"
                     spellcheck="false"
                     class="form-control"
@@ -35,9 +36,10 @@
        </div>
 
        <div class="form-group">
-        <label for="movie-content">Genre</label>
+        <label for="movie-content">Genre<span class="required">*</span></label>
             <input placeholder="Enter genre"
                     id="genre"
+                    required
                     name="genre"
                     spellcheck="false"
                     class="form-control"
@@ -46,9 +48,10 @@
        </div>
 
         <div class="form-group">
-        <label for="movie-content">Image URL</label>
+        <label for="movie-content">Image URL<span class="required">*</span></label>
             <input placeholder="Enter Image URL"
                     id="image-url"
+                    required
                     name="image-url"
                     spellcheck="false"
                     class="form-control"
@@ -57,9 +60,10 @@
        </div>
 
        <div class="form-group">
-        <label for="movie-content">URL</label>
+        <label for="movie-content">URL<span class="required">*</span></label>
             <input placeholder="Enter URL"
                     id="url"
+                    required
                     name="url"
                     spellcheck="false"
                     class="form-control"
@@ -68,25 +72,25 @@
        </div>
 
        <div class="col-md-3">
-            <label for="ratings">Ratings</label>
-            <input type="text" class="form-control" id="ratings" name="ratings" placeholder="Ratings"
+            <label for="ratings">Ratings<span class="required">*</span></label>
+            <input type="text" class="form-control" id="ratings"  required name="ratings" placeholder="Ratings"
                    value="{{ $movie->ratings }}">
         </div>
 
          <div class="col-md-3">
-            <label for="ratings-count">Ratings Count</label>
-            <input type="text" class="form-control" id="rating-count" name="rating-count" 
+            <label for="ratings-count">Ratings Count<span class="required">*</span></label>
+            <input type="text" class="form-control" id="rating-count" required name="rating-count" 
                    placeholder="Ratings Count" value="{{ $movie->rating_count }}">
         </div>
 
         <div class="col-md-3">
-            <label for="duration">Duration</label>
-            <input type="text" class="form-control" id="duration" name="duration" placeholder="Duration" value="{{ $movie->duration }}">
+            <label for="duration">Duration<span class="required">*</span></label>
+            <input type="text" class="form-control" id="duration" required name="duration" placeholder="Duration" value="{{ $movie->duration }}">
         </div>
 
         <div class="col-md-3">
-            <label for="year">Year</label>
-            <input type="text" class="form-control" id="year" name="year" placeholder="Movie year" value="{{ $movie->year }}">
+            <label for="year">Year<span class="required">*</span></label>
+            <input type="text" class="form-control" id="year" required name="year" placeholder="Movie year" value="{{ $movie->year }}">
         </div>
      
      <div class="form-group">

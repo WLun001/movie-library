@@ -28,7 +28,9 @@
             <ol class="list-unstyled">
               <li><a href="/movies/{{ $movie->id }}/edit">Edit Movie</a></li>
               <li><a href="/movies/create">Add Movie</a></li>
+              @endif
               <li><a href="/movies">List of Movies</a></li>
+              @if(Auth::check())
               <li>
                <a href="#"
                     onclick="

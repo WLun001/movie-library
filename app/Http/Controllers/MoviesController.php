@@ -101,6 +101,8 @@ class MoviesController extends Controller
         if(Auth::check()){
 
             $this->validate($request, [
+                'title' => 'min:2|max:20',
+                'synopsis' => 'min:20|max:100',
                 'image_url' => 'image',
                 'url' => 'url',
                 'rating_count' => 'integer',
